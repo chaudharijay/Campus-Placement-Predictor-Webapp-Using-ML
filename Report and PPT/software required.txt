@@ -1,0 +1,16 @@
+software required: 
+
+anaconda navigator,
+jupyter notebook, 
+VS code
+
+Flask
+Python
+numpy
+pandas
+matplotlib 
+seaborn  
+scikitlearn 
+html 
+css 
+javascript

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Result</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/output.css') }}"
+    />
+  </head>
+  <body>
+
+    
+    <div class="output">
+      <div class="ans">
+        <p>Your chances of getting placed are</p>
+      </div>
+        <div class="out">
+          {{ output }}
+        </div>
+    </div>
+
+    
+    <footer class="end">
+      <h2>This Website Uses Random Forest Classifier To Predict Results</h2>
+    </footer>
+
+  </body>
+  
+</html>

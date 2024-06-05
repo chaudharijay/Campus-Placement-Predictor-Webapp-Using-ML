@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
+
+
+.montserrat-helloworld{
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+body{
+  font-family: var(--helloworld);
+  background: linear-gradient(89deg,#190019,#2b124c,#522b5b,#88556c,#6f2647,#000000);
+  background-size: 360% 360%;
+  animation: gradient-animation 12s ease infinite;
+}
+:root {
+  --primary-color: rgb(11, 78, 179);
+}
+
+
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+body {
+ .gradient-background {
+  background: linear-gradient(89deg,#190019,#2b124c,#522b5b,#88556c,#6f2647,#000000);
+  background-size: 360% 360%;
+  animation: gradient-animation 12s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+  font-family: Montserrat, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+h1{
+  color: #fbe4d8;
+  transition: ease 3s;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.radio-label {
+  font-size: 25px;
+  color: #854f6c ;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.radio-button {
+  font-weight: 1000;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid  #fbe4d8;;
+  margin-right: 10px;
+}
+
+input[type="radio"] {
+  display: none;
+  
+}
+
+input[type="radio"]:checked + .radio-button {
+  background-color: #fbe4d8;}
+
+/* Add space for SVG icon */
+.radio-label:after {
+  content: '';
+  width: 20px; /* Adjust as needed */
+  height: 40px; /* Adjust as needed */
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+}
+
+::placeholder{
+  color: #854f6c
+}
+
+/*  Global Stylings */
+label {
+  font-size: 25px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+select {
+  background-color: black;
+  color: #854f6c ;
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid #854f6c ;
+  outline: none;
+}
+
+
+input {
+  color: rgb(255, 255, 255);
+  outline: none;
+  background-color: black;
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  border: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid #854f6c;
+ 
+}
+
+input:focus{
+  border: 2px solid rgb(0, 0, 0);
+  border-bottom: 2px solid #854f6c ;
+}
+
+
+
+.width-50 {
+  width: 50%;
+}
+
+.ml-auto {
+  margin-left: auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Progressbar */
+.progressbar {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  counter-reset: step;
+  margin: 2rem 0 4rem;
+}
+
+
+.progressbar::before,
+.progress {
+  content: "";
+  position: absolute;
+  top: 50%;
+  border-radius: 20px;
+  transform: translateY(-50%);
+  height: 10px;
+  width: 100%;
+  box-shadow: 2px 2px 10px 2px;
+  background-color: #d104ff;
+  z-index: -1;
+}
+
+.progress {
+  background-color: #f2b8ff;
+  width: 0%;
+  transition: 0.3s;
+}
+
+/*  .progress-step {
+    width: 2.1875rem;
+    height: 2.1875rem;
+    background-color: #dcdcdc;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  } */
+
+/*  .progress-step::before {
+    counter-increment: step;
+    content: counter();
+  } */
+
+.progress-step::after {
+  content: attr(data-title);
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  font-size: 0.85rem;
+  color: #c3ed58;
+}
+
+.progress-step-active {
+  background-color: var(--primary-color);
+  color: #ffcdcd;
+}
+
+/* Form */
+.form {
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: rgb(91, 2, 99) 0px 3px 12px 5px; 
+  border-radius: 0.35rem;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, .8); /* Change the background color here */
+}
+
+.form:hover{
+  box-shadow: rgb(137, 10, 149) 0px 3px 15px 6px; 
+}
+
+.form-step {
+  display: none;
+  transform-origin: top;
+  animation: animate 0.5s;
+}
+
+.form-step-active {
+  display: block;
+}
+
+.input-group {
+  margin: 2rem 0;
+}
+
+input, select{
+  margin-top: 40px;
+font-size: 20px;
+
+}
+
+@keyframes animate {
+  from {
+    transform: scale(1, 0);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1, 1);
+    opacity: 1;
+  }
+}
+
+/* Button */
+.btns-group {
+  display: flex;
+  justify-content: space-between;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.btn {
+  display: flex;
+  padding: 2px;
+  text-decoration: none;
+  /*  background-color: var(--primary-color); */
+  color: #fbe4d8;
+  text-align: center;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: 0.3s;
+  letter-spacing: 3px;
+}
+
+.btn-submit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-weight: 700;
+  color: #5f1b3a;
+  background-color: #af7690;
+  text-decoration: none;
+  height: 30px;
+  width: 100px;
+  transition: .3s;
+  border-radius: 20px;
+}
+
+.btn-submit:hover{
+  width: 200px;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: 2px 0px 8px 3px;
+}
+
+.btn:hover {
+  /* box-shadow: 0 0 0 2px #fff, 0 0 0 3px var(--primary-color); */
+  letter-spacing: 16.5px;
+}
+
+.btn-next {
+  gap: 5px;
+}
+
+.btn-prev {
+  gap: 5px;
+}

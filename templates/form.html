@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Prediction</title>
+    <link rel="stylesheet" href="/static/form.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body >
+    <form action="{{ url_for('predict')}}" class="form" name="form" method="GET" onsubmit="return validateForm()">
+          <!-- Progress bar -->
+          <div class="progressbar">
+            <div class="progress" id="progress"></div>
+            
+            <div
+              class="progress-step progress-step-active"
+              data-title=""
+            ></div>
+            <div class="progress-step" data-title=""></div>
+            <div class="progress-step" data-title=""></div>
+            <div class="progress-step" data-title=""></div>
+            <div class="progress-step" data-title=""></div>
+            <div class="progress-step" data-title=""></div>
+            <div class="progress-step" data-title=""></div>
+          </div>
+    
+          <!-- Steps -->
+          <div class="form-step form-step-active">
+            <div class="input-group user-box">
+              <h1>How old are you ?</h1>
+              <input type="number" name="age" id="age" min="19" max="30" pattern="^[0-9]\d*$" required class="" placeholder="Age"/>
+            </div>
+            <div class="btns-group">
+        
+              <a href="#" class="btn btn-prev"></a>
+              <a href="#" class="btn btn-next">Next <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg> </a>
+            </div>
+          </div>
+          <div class="form-step">
+            <div class="input-group">
+              <h1>What's your gender ?</h1>
+              <div class="radio-group">
+                  <label for="male" class="radio-label">
+                      <input type="radio" id="male" name="gender" value="1">
+                      <span class="radio-button"></span> Male
+                  </label>
+                  <label for="female" class="radio-label">
+                    <input type="radio" id="female" name="gender" value="0">
+                    <span class="radio-button"></span> Female
+                </label>
+              </div>
+          </div>
+            <div class="btns-group">
+              <a href="#" class="btn btn-prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg> Back </a>
+              <a href="#" class="btn btn-next">Next <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="form-step">
+            <div class="input-group">
+              <h1>What stream do you study in ?</h1>
+              <div class="radio-group">
+                <label for="stream-it" class="radio-label">
+                  <input type="radio" id="stream-it" name="stream" value="3">
+                  <span class="radio-button"></span> IT
+              </label>
+              <label for="stream-cse" class="radio-label">
+                <input type="radio" id="stream-cse" name="stream" value="2">
+                <span class="radio-button"></span> CSE
+            </label>
+                  <label for="stream-entc" class="radio-label">
+                      <input type="radio" id="stream-entc" name="stream" value="1">
+                      <span class="radio-button"></span> E&TC
+                  </label>
+                  <label for="stream-civil" class="radio-label">
+                    <input type="radio" id="stream-civil" name="stream" value="6">
+                    <span class="radio-button"></span> Civil
+                </label>
+
+                  <label for="stream-mechanical" class="radio-label">
+                      <input type="radio" id="stream-mechanical" name="stream" value="4">
+                      <span class="radio-button"></span> Mechanical
+                  </label>
+                  <label for="stream-electrical" class="radio-label">
+                      <input type="radio" id="stream-electrical" name="stream" value="5">
+                      <span class="radio-button"></span> Electrical
+                  </label>
+                  
+              </div>
+          </div>
+  
+           
+            <div class="btns-group">
+              <a href="#" class="btn btn-prev"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>Back</a>
+              <a href="#" class="btn btn-next">Next <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="form-step">
+            
+            <div class="input-group">
+              <h1>Your current pointer ?</h1>
+              <input type="number" name="cgpa" id="cgpa"  step="0.01" min="1" max="10" required placeholder="CGPA"/>
+            </div>
+    
+           
+            <div class="btns-group">
+              <a href="#" class="btn btn-prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>Back</a>
+              <a href="#" class="btn btn-next">Next <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="form-step">
+          
+            <div class="input-group">
+              <h1>Do you have any backlogs ?</h1>
+              <select name="backlogs" id="backlogs" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </div>
+           
+            <div class="btns-group">
+              <a href="#" class="btn btn-prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>Back</a>
+              <a href="#" class="btn btn-next">Next <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="form-step">
+            
+            <div class="input-group">
+              <h1>Do you live in hostel ?</h1>
+              <select name="hostel" id="hostel" required>
+                <option value="" disabled selected>Select</option>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+              </select>
+            </div>
+            <div class="btns-group">
+              <a href="#" class="btn btn-prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>Back</a>
+              <a href="#" class="btn btn-next">Next <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+              </svg></a>
+            </div>
+          </div>
+          <div class="form-step">
+            
+            <div class="input-group">
+              <h1>How many Internships have you done ?</h1>
+              <input type="number" name="internship" id="internship" min="0" max="3" pattern="^[0-9]\d*$" required placeholder="Enter here
+              "/>
+            </div>
+            <div class="btns-group">
+              <a href="#" class="btn btn-prev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 7">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+              </svg>Back</a>
+              
+              <button class="btn-submit" type="submit" value="submit" onclick="submitForm()">Submit</button>
+      
+              <script>
+                  function submitForm(){
+                    if age == "" || gender == "" || stream == "" || internship == "" || cgpa =="" || hostel =="" || backlogs == "" {
+                      alert("All Fields Are Mandatory");
+                    }
+                      document.form.submit();
+                      //document.form.reset();
+      
+              }
+              </script>
+              
+            </div>
+          </div>
+        </form>
+      </body></html>
+        <script src="/static/form.js"></script>
+        
+</body>
+</html>
