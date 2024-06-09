@@ -2,16 +2,6 @@
 
 Welcome to the College Student Placement Prediction WebApp! This project leverages machine learning to predict the placement outcomes of college students. The web application is built using Flask for the backend and various other technologies for data processing and visualization.
 
-## Table of Contents
-
-- [Introduction](#introduction)
-- [Features](#features)
-- [Installation](#installation)
-- [Usage](#usage)
-- [Technologies Used](#technologies-used)
-- [Contributing](#contributing)
-- [License](#license)
-
 ## Introduction
 
 This web application uses machine learning algorithms to predict whether a student will be placed or not based on their academic and extracurricular performance. It provides insights and visualizations to help understand the factors affecting placement.
