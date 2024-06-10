@@ -22,8 +22,6 @@ To get started with the project, follow these steps:
    git clone https://github.com/chaudharijay/Campus-Placement-Predictor-Webapp-Using-ML.git
    cd college-placement-prediction
 
-   Set up the environment:
-
 2. Make sure you have Anaconda Navigator installed. Create a new environment using the provided environment.yml file:
    ```sh
    conda env create -f environment.yml
